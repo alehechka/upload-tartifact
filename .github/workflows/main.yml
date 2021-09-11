@@ -27,6 +27,7 @@ jobs:
     # TODO: swap for actual usage of download-tartifact
     runs-on: ubuntu-latest
     name: Test download-tartifact GHA
+    needs: test-upload-tartifact
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
