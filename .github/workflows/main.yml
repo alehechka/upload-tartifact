@@ -1,0 +1,14 @@
+on:
+  - push
+
+jobs:
+  test-upload-tartifact:
+    runs-on: ubuntu-latest
+    name: Test upload-tartifact GHA
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: alehechka/upload-tartifact@main
+        with:
+          name: test
+          path: README.md
