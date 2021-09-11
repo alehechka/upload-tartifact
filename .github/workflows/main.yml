@@ -21,7 +21,7 @@ jobs:
         uses: alehechka/upload-tartifact@main
         with:
           name: test2
-          path: README.md
+          path: .github/workflows/main.yml
 
   test-download-tartifact:
     # TODO: swap for actual usage of download-tartifact
