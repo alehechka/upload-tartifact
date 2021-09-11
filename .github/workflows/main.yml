@@ -22,3 +22,39 @@ jobs:
         with:
           name: test2
           path: README.md
+
+  test-download-tartifact:
+    # TODO: swap for actual usage of download-tartifact
+    runs-on: ubuntu-latest
+    name: Test download-tartifact GHA
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Download Test Artifact
+        uses: actions/download-artifact@main
+        with:
+          name: test
+          path: test
+
+      - name: Extract Tar files
+        run: tar -xvf artifact.tar
+        working-directory: test
+
+      - name: List Test directory
+        run: ls -alR
+        working-directory: test
+
+      - name: Download Test2 Artifact
+        uses: actions/download-artifact@main
+        with:
+          name: test2
+          path: test2
+
+      - name: Extract Tar files
+        run: tar -xvf artifact.tar
+        working-directory: test2
+
+      - name: List Test directory
+        run: ls -alR
+        working-directory: test2
