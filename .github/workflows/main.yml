@@ -1,3 +1,5 @@
+name: Test upload-tartifact
+
 on:
   - push
 
@@ -6,9 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     name: Test upload-tartifact GHA
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Repo
+        uses: actions/checkout@v2
 
-      - uses: alehechka/upload-tartifact@main
+      - name: Initial Tartifact
+        uses: alehechka/upload-tartifact@main
         with:
           name: test
+          path: README.md
+
+      - name: Second Tartifact (test cleanup of prior)
+        uses: alehechka/upload-tartifact@main
+        with:
+          name: test2
           path: README.md
