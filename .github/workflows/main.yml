@@ -24,7 +24,6 @@ jobs:
           path: .github/workflows/main.yml
 
   test-download-tartifact:
-    # TODO: swap for actual usage of download-tartifact
     runs-on: ubuntu-latest
     name: Test download-tartifact GHA
     needs: test-upload-tartifact
@@ -33,29 +32,21 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Download Test Artifact
-        uses: actions/download-artifact@main
+        uses: alehechka/download-tartifact@main
         with:
           name: test
           path: test
-
-      - name: Extract Tar files
-        run: tar -xvf artifact.tar
-        working-directory: test
 
       - name: List Test directory
         run: ls -alR
         working-directory: test
 
       - name: Download Test2 Artifact
-        uses: actions/download-artifact@main
+        uses: alehechka/download-tartifact@main
         with:
           name: test2
           path: test2
 
-      - name: Extract Tar files
-        run: tar -xvf artifact.tar
-        working-directory: test2
-
-      - name: List Test directory
+      - name: List Test2 directory
         run: ls -alR
         working-directory: test2

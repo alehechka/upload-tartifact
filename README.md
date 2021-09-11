@@ -6,4 +6,4 @@ This action will first tar any files or folders at the provided `path` input int
 
 Utilize the sibling action at [download-tartifact](https://github.com/alehechka/download-tartifact) to download the artifact and extract your files.
 
-> Note: The `path` provided will be maintained through tar, so after download-tartifact, and subfolder structure will remain intact.
+> Note: The `path` provided will be maintained through tar, so after `download-tartifact`, any subfolder structure will remain intact.
