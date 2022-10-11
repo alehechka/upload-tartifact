@@ -30,8 +30,10 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: tar -cvf artifact.tar ${{ inputs.path }}
-      shell: 'bash'
+    - run: |
+        shopt -s globstar
+        tar -cvf artifact.tar ${{ inputs.path }}
+      shell: bash
 
     - uses: actions/upload-artifact@v2
       with:
