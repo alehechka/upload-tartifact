@@ -35,7 +35,7 @@ runs:
         tar -cvf artifact.tar ${{ inputs.path }}
       shell: bash
 
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: ${{ inputs.name }}
         path: artifact.tar
