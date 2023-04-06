@@ -12,13 +12,13 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Initial Tartifact
-        uses: alehechka/upload-tartifact@main
+        uses: ./
         with:
           name: test
           path: README.md
 
       - name: Second Tartifact (test cleanup of prior)
-        uses: alehechka/upload-tartifact@main
+        uses: ./
         with:
           name: test2
           path: .github/workflows/main.yml
